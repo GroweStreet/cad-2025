@@ -24,13 +24,12 @@ public class SecurityCong {
         return http.build();
     }
 
-        @Bean
+    @Bean
     public UserDetailsService userDetailsService() {
         return new InMemoryUserDetailsManager(
             User.withUsername("api")
                 .password("{noop}api")
                 .roles("API")
-                ///.authorities("VIEW_PROFILE", "EDIT_PROFILE", "DELETE_USERS")
                 .build()
         );
     }
